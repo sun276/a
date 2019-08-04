@@ -8,8 +8,8 @@ var path = require('path');
 //导入url模块
 var url = require('url');
 var querystring = require("querystring");
-var pass="submit.html"
-var show="result.html"
+var pass="src/html/submit.html"
+var show="src/html/result.html"
 http.createServer(function (request, response) {
     var pathname2 = parseObj.pathname2;
     if (pathname == "") {
@@ -38,7 +38,7 @@ http.createServer(function (request, response) {
     // 处理接口
     switch (request.method) {
         case "GET":
-            if (pathname == "/result.html"){
+            if (pathname == "src/html/result.html"){
                 name = request.query.name;
                 response.writeHead(200, {'Content-Type': 'text/html'});
                 fs.readFile(show,function (err,data) {
