@@ -11,15 +11,13 @@ var querystring = require("querystring");
 var pass="src/html/submit.html"
 var show="src/html/result.html"
 http.createServer(function (request, response) {
-    var pathname2 = parseObj.pathname2;
-    if (pathname == "") {
         fs.readFile(pass, function (err, data) {
             if (err) {
                 return console.error(err);
             }
             response.write(data);
         });
-    }
+
     //1.默认情况下，如果url路径中有中文，则会对中文进行URI编码，所以服务端要想获取中文需要对url进行URI解码
     console.log(encodeURI(request.url));
 
@@ -38,13 +36,14 @@ http.createServer(function (request, response) {
     // 处理接口
     switch (request.method) {
         case "GET":
-            if (pathname == "src/html/result.html"){
+            if (pathname == "/src/html/result.html"){
                 name = request.query.name;
                 response.writeHead(200, {'Content-Type': 'text/html'});
                 fs.readFile(show,function (err,data) {
                     if (err) {
                         return console.error(err);
                     }
+                    console.log("asdfrdxcrvfgghbhybhbjyn")
                     var str=data.toString();
                     str=str.replace(/\*XX\*/,name);
                     response.end(str);
