@@ -1,0 +1,19 @@
+{
+  "name": "gittest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node  src/js/a.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sun276/a.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sun276/a/issues"
+  },
+  "homepage": "https://github.com/sun276/a#readme"
+}
